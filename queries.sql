@@ -63,3 +63,9 @@ SELECT *
 SELECT *
     FROM order_history
     WHERE customization != '';
+
+-- 13: Get busiest days
+SELECT TO_CHAR(purchase_time, 'YYYY-MM-DD') AS order_date, COUNT(*) AS order_count 
+    FROM order_history
+    GROUP BY order_date
+    ORDER BY order_count DESC;
