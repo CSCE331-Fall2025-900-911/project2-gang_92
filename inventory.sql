@@ -1,0 +1,57 @@
+DROP TABLE IF EXISTS inventory;
+
+CREATE TABLE inventory (
+  inventory_id SERIAL PRIMARY KEY,
+  item_name    TEXT NOT NULL UNIQUE,
+  item_amount  NUMERIC(12,2) NOT NULL CHECK (item_amount >= 0),
+  item_unit    TEXT NOT NULL
+);
+
+INSERT INTO inventory (item_name, item_amount, item_unit) VALUES
+  ('Matcha green tea powder',                1.50, 'lb'),
+  ('Oolong tea leaves',                      3.00, 'lb'),
+  ('Black tea bags (Assam/Ceylon)',        400.00, 'bags'),
+  ('Jasmine green tea (loose)',              2.00, 'lb'),
+  ('Thai tea blend (loose)',                 2.00, 'lb'),
+  ('Roasted oolong tea (loose)',             2.00, 'lb'),
+  ('Green tea (loose)',                      3.00, 'lb'),
+  ('Wintermelon syrup tea base',             2.11, 'gal'),
+  ('Tapioca pearls (dry, uncooked)',        25.00, 'lb'),
+  ('Tapioca pearls (cooked, prep batch)',    1.59, 'gal'),
+  ('Brown sugar boba pearls (caramelized)',  1.06, 'gal'),
+  ('Mango popping pearls',                   3.00, 'kg'),
+  ('Passionfruit popping pearls',            3.00, 'kg'),
+  ('Whole milk',                            10.00, 'gal'),
+  ('Evaporated milk (cans)',                24.00, 'count'),
+  ('Condensed milk (cans)',                 24.00, 'count'),
+  ('Creamer (dairy or non-dairy)',           2.11, 'gal'),
+  ('Oat milk',                               2.11, 'gal'),
+  ('Coconut milk (cartons)',                12.00, 'count'),
+  ('Granulated sugar',                      50.00, 'lb'),
+  ('Simple syrup',                           2.11, 'gal'),
+  ('Honey',                                  6.00, 'lb'),
+  ('Brown sugar syrup',                      1.59, 'gal'),
+  ('Caramel syrup',                          1.06, 'gal'),
+  ('Toffee syrup',                           1.06, 'gal'),
+  ('Okinawa kokuto sugar syrup',             1.06, 'gal'),
+  ('Honeydew powder',                        2.50, 'kg'),
+  ('Honeydew puree',                         1.06, 'gal'),
+  ('Mango puree',                            1.06, 'gal'),
+  ('Mango syrup',                            1.06, 'gal'),
+  ('Passionfruit syrup',                     1.06, 'gal'),
+  ('Strawberry puree',                       1.06, 'gal'),
+  ('Strawberry syrup',                       1.06, 'gal'),
+  ('Taro powder',                            3.00, 'kg'),
+  ('Sea salt (finishing)',                   1.00, 'kg'),
+  ('Limes',                                 36.00, 'count'),
+  ('Oranges',                               18.00, 'count'),
+  ('Lemons',                                24.00, 'count'),
+  ('Water',                                 50.00, 'gal'),
+  ('Cups',                                 500.00, 'count'),
+  ('Straws',                               500.00, 'count'),
+  ('Napkins',                             1000.00, 'count'),
+  ('Flatware',                             300.00, 'count'),
+  ('To-go boxes',                          200.00, 'count'),
+  ('Bags',                                 200.00, 'count');
+
+SELECT * FROM inventory ORDER BY item_name;
