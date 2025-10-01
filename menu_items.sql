@@ -9,7 +9,7 @@ INSERT INTO menu_items (item_name, price, recipe, calories) VALUES
 ('Oolong Tea', 5.25, $$
 - 1 cup water
 - 1 tsp oolong tea leaves
-- honey, lemon, or milk$$, 190)
+- honey, lemon, or milk$$, 190),
 ('Classic Milk Tea', 5.25, $$
 - 2 bags black tea (Assam/Ceylon) steeped in 1 cup hot water
 - 3 tbsp simple syrup (adjust to taste)
