@@ -82,3 +82,8 @@ SELECT EXTRACT(HOUR FROM purchase_time) AS hour_of_day,COUNT(*) AS order_count, 
     FROM orders
     GROUP BY EXTRACT(HOUR FROM purchase_time)
     ORDER BY hour_of_day;
+
+--15: Weekly Sales History
+SELECT DATE_TRUNC('week', orders.purchase_time)::date AS week_start_date, COUNT(*) AS order_count
+    FROM orders 
+    GROUP BY week_start_date;
