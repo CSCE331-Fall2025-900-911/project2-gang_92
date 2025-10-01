@@ -76,3 +76,9 @@ SELECT DATE_TRUNC('day', o.purchase_time)::date AS day, SUM(o.total_price) AS or
     GROUP BY day
     ORDER BY order_total DESC
     LIMIT 10;
+
+--14: Total number of sales and count of orders at each hour
+SELECT EXTRACT(HOUR FROM purchase_time) AS hour_of_day,COUNT(*) AS order_count, SUM(total_price) AS total_sales
+    FROM orders
+    GROUP BY EXTRACT(HOUR FROM purchase_time)
+    ORDER BY hour_of_day;
