@@ -71,7 +71,8 @@ SELECT o.order_id, o.total_price, o.customer_name, o.purchase_time, omi.menu_ite
     WHERE omi.customization != '';
 
 -- 13: Get busiest days
-SELECT TO_CHAR(o.purchase_time, 'YYYY-MM-DD') AS order_date, COUNT(*) AS order_count 
+SELECT DATE_TRUNC('week', o.purchase_time)::date AS week_start, COUNT(*) AS order_count 
     FROM orders o
-    GROUP BY order_date
-    ORDER BY order_count DESC;
+    GROUP BY week_start
+    ORDER BY order_count DESC
+    LIMIT 10;
