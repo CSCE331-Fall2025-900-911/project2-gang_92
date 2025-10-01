@@ -1,11 +1,4 @@
-DROP TABLE IF EXISTS inventory;
 
-CREATE TABLE inventory (
-  inventory_id SERIAL PRIMARY KEY,
-  item_name    TEXT NOT NULL UNIQUE,
-  item_amount  NUMERIC(12,2) NOT NULL CHECK (item_amount >= 0),
-  item_unit    TEXT NOT NULL
-);
 
 INSERT INTO inventory (item_name, item_amount, item_unit) VALUES
   ('Matcha green tea powder',                1.50, 'lb'),
