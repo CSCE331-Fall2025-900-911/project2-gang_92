@@ -70,9 +70,9 @@ SELECT o.order_id, o.total_price, o.customer_name, o.purchase_time, omi.menu_ite
     JOIN orders_menu_items omi ON o.order_id = omi.order_id
     WHERE omi.customization != '';
 
--- 13: Get busiest days
-SELECT DATE_TRUNC('week', o.purchase_time)::date AS week_start, COUNT(*) AS order_count 
+-- 13: Get top 10 highest earning weeks
+SELECT DATE_TRUNC('day', o.purchase_time)::date AS day, SUM(o.total_price) AS order_total 
     FROM orders o
-    GROUP BY week_start
-    ORDER BY order_count DESC
+    GROUP BY day
+    ORDER BY order_total DESC
     LIMIT 10;
