@@ -1,6 +1,15 @@
 BEGIN;
 
 INSERT INTO menu_items (item_name, price, recipe, calories) VALUES
+('Green Tea', 4.25, $$
+- 1/3 cup uncooked tapioca pearls
+- 3/4 tsp matcha green tea powder
+- 2 cups water
+- 1 cup milk$$, 200),
+('Oolong Tea', 5.25, $$
+- 1 cup water
+- 1 tsp oolong tea leaves
+- honey, lemon, or milk$$, 190)
 ('Classic Milk Tea', 5.25, $$
 - 2 bags black tea (Assam/Ceylon) steeped in 1 cup hot water
 - 3 tbsp simple syrup (adjust to taste)
